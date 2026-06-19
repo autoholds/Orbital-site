@@ -9,12 +9,10 @@
     <meta name="theme-color" content="#000000">
 
 
-    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -28,7 +26,6 @@
             --font: 'Outfit', sans-serif;
             --mono: 'JetBrains Mono', monospace;
 
-            /* Visual Config */
             --avatar-url: url('2fadf6dd12735c61923559fffc2ac983.jpg');
             --cover-url: url('2pac.webp');
             --fallback-avatar: url('https://i.pinimg.com/736x/2f/ad/f6/2fadf6dd12735c61923559fffc2ac983.jpg');
@@ -54,7 +51,6 @@
             cursor: default;
         }
 
-        /* --- Background Effects --- */
         #bg-video {
             position: fixed;
             top: 50%;
@@ -67,7 +63,6 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
             filter: contrast(1.05) saturate(1.1);
-            /* Removed dark brightness filter */
             transition: 1s ease;
         }
 
@@ -111,7 +106,6 @@
             }
         }
 
-        /* --- Entry Screen --- */
         #entry {
             position: fixed;
             inset: 0;
@@ -154,7 +148,6 @@
             }
         }
 
-        /* --- Main UI Card --- */
         .wrapper {
             width: 100%;
             max-width: 420px;
@@ -173,15 +166,12 @@
 
         .card {
             background: transparent;
-            /* Fully Transparent */
             backdrop-filter: none;
-            /* Removed Blur */
             -webkit-backdrop-filter: none;
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 32px;
             padding: 45px 35px 35px;
             box-shadow: none;
-            /* Removed shadow for maximum clarity */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -190,7 +180,6 @@
             transform-style: preserve-3d;
         }
 
-        /* Avatar Styling (Perfect Circle) */
         .avatar-box {
             position: relative;
             width: 110px;
@@ -220,14 +209,12 @@
             width: 24px;
             height: 24px;
             background: #747f8d;
-            /* Default */
             border: 4px solid #0d0d0d;
             border-radius: 50%;
             z-index: 2;
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* Status Colors */
         .status-dot.online {
             background: #23a559;
             box-shadow: 0 0 15px rgba(35, 165, 89, 0.5);
@@ -259,7 +246,6 @@
             margin-bottom: 12px;
         }
 
-        /* Discord Badges */
         .badges-container {
             display: flex;
             flex-wrap: wrap;
@@ -295,7 +281,6 @@
             letter-spacing: 0.2px;
         }
 
-        /* Links */
         .links {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -326,7 +311,6 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* --- Minimal Premium Player --- */
         .player-card {
             width: 100%;
             background: rgba(255, 255, 255, 0.02);
@@ -424,7 +408,6 @@
             transform: scale(1.1);
         }
 
-        /* --- Discord Presence Widget (Guns.lol Style) --- */
         .presence-box {
             width: 100%;
             background: rgba(255, 255, 255, 0.03);
@@ -495,7 +478,6 @@
             background: #747f8d;
         }
 
-        /* --- Footer --- */
         .footer-info {
             margin-top: 30px;
             display: flex;
@@ -512,7 +494,6 @@
             gap: 6px;
         }
 
-        /* --- Notification --- */
         #notif {
             position: fixed;
             top: 30px;
@@ -558,12 +539,10 @@
 
     <div class="grain"></div>
 
-    <!-- Entry Screen -->
     <div id="entry">
         <div class="entry-btn">[ tap to entry ]</div>
     </div>
 
-    <!-- Background Layer -->
     <video id="bg-video" loop muted playsinline>
         <source src="https://r2.guns.lol/40299672-26e0-4ed8-af65-9f82f8040961.mp4" type="video/mp4">
     </video>
@@ -580,7 +559,6 @@
 
             <h1 class="name">Orbital</h1>
 
-            <!-- Badges -->
             <div class="badges-container">
                 <img src="https://raw.githubusercontent.com/mezotv/discord-badges/main/assets/discordstaff.svg"
                     class="discord-badge" title="Discord Staff">
@@ -612,7 +590,6 @@
                     class="discord-badge" title="Discord Certified Moderator">
             </div>
 
-            <!-- Discord Presence (New) -->
             <a href="https://discord.com/users/141622395273216000" target="_blank"
                 style="text-decoration: none; width: 100%;">
                 <div class="presence-box">
@@ -654,11 +631,7 @@
     <div id="notif">Copied!</div>
 
     <script>
-        /* 
-           =========================================
-                    GENERAL CONFIGURATION
-           =========================================
-        */
+
         const BACKGROUND_MUSIC = "Travis Scott x Vizion - My Eyes (Music Video) [Prod. Vizion].mp3";
 
         const CONFIG = {
@@ -672,8 +645,7 @@
         const song = document.getElementById('audio');
         const typeDest = document.getElementById('typing-host');
         const cardTarget = document.getElementById('tilt-card');
-        // const statusDot = document.getElementById('discord-status'); 
-        // const avatarEl = document.getElementById('discord-avatar'); 
+
 
         const dsTag = document.getElementById('ds-tag');
         const dsStatus = document.getElementById('ds-status');
@@ -681,15 +653,12 @@
         const dsDot = document.getElementById('ds-dot');
         const dsDeco = document.getElementById('ds-deco');
 
-        // Init Music
         song.src = BACKGROUND_MUSIC;
 
-        // Logic
         gate.addEventListener('click', () => {
             gate.classList.add('hide');
             root.classList.add('anim');
 
-            // Reset and Sync
             bg.currentTime = 0;
             song.currentTime = 0;
             song.volume = 0;
@@ -698,7 +667,6 @@
                 bg.play().catch(() => { });
                 song.play().catch(() => { });
 
-                // Smooth Volume Fade-in
                 let vol = 0;
                 const fadeIn = setInterval(() => {
                     if (vol < 0.6) {
@@ -714,7 +682,6 @@
             runTyping();
         });
 
-        // Perfect Sync Logic: Keeps audio and video locked together
         const syncMedia = () => {
             if (Math.abs(song.currentTime - bg.currentTime) > 0.1) {
                 song.currentTime = bg.currentTime;
@@ -726,12 +693,10 @@
         bg.addEventListener('pause', () => song.pause());
         bg.addEventListener('seeking', () => { song.currentTime = bg.currentTime; });
 
-        // Force restart sync on loop
         bg.addEventListener('play', () => {
             if (bg.currentTime < 0.3) song.currentTime = 0;
         });
 
-        // Typing effect
         let textPtr = 0, charPtr = 0, rev = false;
         function runTyping() {
             const word = CONFIG.typing[textPtr];
@@ -743,7 +708,6 @@
             setTimeout(runTyping, tick);
         }
 
-        // 3D Tilt
         document.addEventListener('mousemove', (e) => {
             const box = root.getBoundingClientRect();
             const centerX = box.left + box.width / 2;
@@ -753,7 +717,6 @@
             cardTarget.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
         });
 
-        // Notifications
         function triggerNotif(msg) {
             const toast = document.getElementById('notif');
             toast.textContent = msg;
@@ -772,7 +735,6 @@
             triggerNotif('LTC Copied!');
         };
 
-        // Lanyard Discord Presence Logic
         async function fetchDiscordPresence() {
             if (!CONFIG.discord_id) return;
             try {
@@ -782,11 +744,9 @@
                     const presence = data.data;
                     const user = presence.discord_user;
 
-                    // Update UI
                     dsTag.textContent = user.global_name || user.username;
                     dsPfp.style.backgroundImage = `url('https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.webp?size=160')`;
 
-                    // Handle Avatar Decoration
                     const decoData = user.avatar_decoration_data;
                     if (decoData && decoData.asset) {
                         dsDeco.style.backgroundImage = `url('https://cdn.discordapp.com/avatar-decoration-presets/${decoData.asset}.png')`;
@@ -795,11 +755,9 @@
                         dsDeco.style.display = 'none';
                     }
 
-                    // Status Dot Color
                     const colors = { online: '#23a559', idle: '#f0b232', dnd: '#f23f43', offline: '#747f8d' };
                     dsDot.style.background = colors[presence.discord_status] || colors.offline;
 
-                    // Activity
                     if (presence.listening_to_spotify) {
                         dsStatus.textContent = `Listening to Spotify: ${presence.spotify.song}`;
                     } else if (presence.activities.length > 0) {
@@ -815,7 +773,6 @@
         fetchDiscordPresence();
         setInterval(fetchDiscordPresence, 15000);
 
-        // Dynamic Title Effect
         let titleIdx = 0;
         const titles = ["@Orbital", "Orbital Project", "S t r a t u p", "Closed Session"];
 
@@ -836,32 +793,25 @@
                 }
             }, 150);
 
-            // Move to next message for next call
             titleIdx = (titleIdx + 1) % titles.length;
         }
 
-        // Alternative: Simple sliding marquee title
         let marqueeText = "Discord.gg/ICMP - Orbital - ";
         setInterval(() => {
             marqueeText = marqueeText.substring(1) + marqueeText.substring(0, 1);
             document.title = marqueeText;
         }, 300);
 
-        // Security: Disable DevTools and Right-Click
         document.addEventListener('contextmenu', (e) => e.preventDefault());
 
         document.onkeydown = (e) => {
-            // Block F12
             if (e.keyCode === 123) return false;
 
-            // Block Ctrl+Shift+I (Inspect), Ctrl+Shift+J (Console), Ctrl+Shift+C (Elements)
             if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) return false;
 
-            // Block Ctrl+U (View Source)
             if (e.ctrlKey && e.keyCode === 85) return false;
         };
 
-        // Views Counter
         let counter = parseInt(localStorage.getItem('orb_views') || '1434') + 1;
         localStorage.setItem('orb_views', counter);
         document.getElementById('views-val').textContent = counter.toLocaleString();
