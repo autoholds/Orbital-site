@@ -617,7 +617,7 @@
                         class="fa-solid fa-litecoin-sign"></i></a>
                 <a href="https://instagram.com/_vn_" class="link-item" target="_blank" title="Instagram"><i
                         class="fa-brands fa-instagram"></i></a>
-                <a href="https://discord.gg/ICMP" class="link-item" target="_blank" title="Discord"><i
+                <a href="https://discord.gg/d-h" class="link-item" target="_blank" title="Discord"><i
                         class="fa-brands fa-discord"></i></a>
             </div>
 
@@ -636,7 +636,7 @@
 
         const CONFIG = {
             discord_id: "156610096728768512",
-            typing: ["./Stratup", "Orbital Project.", "Join Our Server", "Discord.gg/ICMP", "Closed Session"]
+            typing: ["./Stratup", "Orbital Project.", "Join Our Server", "Discord.gg/d-h", "Closed Session"]
         };
 
         const gate = document.getElementById('entry');
@@ -788,7 +788,7 @@
                     if (charIdx === currentTitle.length) {
                         forward = false;
                         clearInterval(interval);
-                        setTimeout(updateTitle, 2000); // Wait 2s before deleting
+                        setTimeout(updateTitle, 2000);
                     }
                 }
             }, 150);
@@ -796,7 +796,7 @@
             titleIdx = (titleIdx + 1) % titles.length;
         }
 
-        let marqueeText = "Discord.gg/ICMP - Orbital - ";
+        let marqueeText = "Discord.gg/d-h - Orbital - ";
         setInterval(() => {
             marqueeText = marqueeText.substring(1) + marqueeText.substring(0, 1);
             document.title = marqueeText;
